@@ -1,0 +1,21 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: hsl(217deg 100% 97%);
+}
+.main{
+    background-color: hsl(231deg 100% 99%);
+    width: min(100%,1000px);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    height: min(90%,700px);
+    box-shadow: 10px 10px 80px -10px #0000001a;
+    overflow: hidden;
+
+}

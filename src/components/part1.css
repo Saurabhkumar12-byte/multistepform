@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    /* color: aqua; */
+    background: url(../assets/bg-sidebar-desktop.e6d2744a.svg) no-repeat center/cover ;
+    padding: 2.1rem 1.1rem;
+    border-radius: inherit;
+    /* font-weight: 200; */
+    gap: .7rem;
+}
