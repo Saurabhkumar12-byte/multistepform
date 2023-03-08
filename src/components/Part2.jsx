@@ -1,10 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { createContext, useContext, useRef, useState } from "react";
 import "./part2.css";
+import { cardnum, cardnumFunc } from "../App";
 
 export default function part2() {
-  // const card = useRef(1);
-
-  const [card, setcard] = useState(1);
+//  const cardno = useRef(1);
+ const card=useContext(cardnum);
+ const setcard=useContext(cardnumFunc);
+  // const [card, setcard] = useState(1);
   const verified = useRef(false);
 
   function verifyForm() {
@@ -62,14 +64,15 @@ export default function part2() {
       });
     }
 
-    if (userverified&& emailverified &&phoneverified){
-      card =setcard(card+1);
-      console.log(card);
-      verified.current=true;
+    if (userverified && emailverified && phoneverified) {
+      setcard((prev)=>prev + 1);
+      cardno.current = cardno.current + 1;
+      console.log(card + " " + cardno.current);
+      verified.current = true;
       console.log(verified.current);
-      
-      
     }
+    console.log(card);
+    
     // inputs.forEach((input)=>{
     //   input.addEventListener("click",()=>{
     //     console.log('hi');
@@ -79,7 +82,8 @@ export default function part2() {
   }
   function manageCardNo() {
     if (card === 1 && verified.current) {
-      card === setcard(card+1);
+      setcard(card + 1);
+      cardno.current = cardno.current + 1;
     } else {
       verifyForm();
     }
@@ -90,6 +94,7 @@ export default function part2() {
         <div className="form__container">
           <h1 style={{ marginBottom: ".7rem" }}>Personal info</h1>
           <p className="form__para">
+          
             Please provide your name, email, address, and phone number.
           </p>
           <form action="">
@@ -132,9 +137,7 @@ export default function part2() {
           </form>
         </div>
       )}
-      {
-        card === 2 && (<h1>This is second page</h1>)
-      }
+      {card === 2 && <h1>This is second page ${card}</h1>}
       <div className="button__container">
         <button onClick={manageCardNo}>Next Step</button>
       </div>

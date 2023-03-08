@@ -39,3 +39,9 @@
     font-size: 1rem;
     font-weight: bold;
 }
+.active{
+    background-color: hsl(206deg 94% 87%);
+    color: hsl(213deg 96% 18%);
+    border: 2px solid;
+    border-color: hsl(206deg 94% 87%);
+} 
